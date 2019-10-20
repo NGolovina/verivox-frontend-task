@@ -1,0 +1,163 @@
+
+table{
+  width: 100%;
+  border: 2px solid grey;
+}
+
+.table-container {
+  padding: 10px;
+}
+
+.position-container {
+  margin: 0 10px;
+}
+
+.upload-container {
+  display: none;
+}
+
+td.mat-cell:last-of-type {
+  padding-left: 0;
+}
+
+.mat-header-cell.mat-column-uploadSpeed,
+.mat-cell.mat-column-uploadSpeed,
+.mat-header-cell.mat-column-tariffBenefit,
+.mat-cell.mat-column-tariffBenefit,
+.price-container__details-button__text,
+.upload-container__label,
+.download-container__label {
+  display: none;
+}
+
+.mat-cell.mat-column-downloadSpeed {
+  text-align: center;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.price-container__price {
+  width: 80px;
+}
+.price-container__details-button {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .table-container {
+    padding: 20px;
+  }
+
+  .upload-container {
+    display: block;
+  }
+  .mat-header-cell.mat-column-uploadSpeed,
+  .mat-cell.mat-column-uploadSpeed,
+  .price-container__details-button__text {
+    display: table-cell;
+  }
+
+  .download-upload-container {
+    width: 170%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: auto;
+
+  }
+
+  .upload-container,
+  .download-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0 16px 16px 0;
+    height: 20px;
+  }
+
+  .upload-container,
+  .download-container {
+    margin: 5px 0;
+  }
+
+  .upload-container__icon,
+  .download-container__icon {
+    height: 18px;
+    line-height: 18px;
+    width: 40px;
+    outline: 2px solid grey;
+    font-size: 10px;
+    vertical-align: center;
+  }
+
+  .upload-container__upload-speed,
+  .download-container__download-speed {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .price-container__details-button{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+
+  .price-container {
+    flex-direction: column;
+  }
+
+  .price-container__price,
+  .price-container__details-button {
+    margin: 5px 0 5px auto;
+  }
+
+  .price-container__price {
+    text-align: end;
+  }
+
+  .price-container__details-button__text {
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .table-container {
+    padding: 40px;
+  }
+  .mat-header-cell.mat-column-tariffBenefit,
+  .mat-cell.mat-column-tariffBenefit {
+    display: table-cell;
+  }
+
+  .mat-header-cell.mat-column-tariffBenefit {
+       padding-left: 170px;
+     }
+
+  .mat-cell.mat-column-tariffBenefit {
+      padding-left: 140px;
+  }
+
+  .download-upload-container {
+    width: 270%;
+    margin: 15px 0;
+  }
+
+  .upload-container__label,
+  .download-container__label {
+    display: block;
+    text-align: left;
+    font-size: 10px;
+  }
+}
+

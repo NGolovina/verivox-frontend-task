@@ -1,0 +1,97 @@
+
+
+<div class="table-container">
+<table mat-table
+       [dataSource]="dataSource"
+       matSortActive="tariffName"
+       matSortDirection="asc"
+       matSort>
+
+    <ng-container matColumnDef="tariffName">
+      <th data-test-selector="tariffName"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+          i18n="TariffList@@tariff-name">Tarif
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <span class="position-container">{{ this.getPosition(row) }}</span> {{ row.tariffName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="downloadSpeed">
+      <th data-test-selector="downloadSpeed"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+          i18n="TariffList@@download-speed">Download Speed
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <div class="download-upload-container">
+          <div class="download-container__label">Download</div>
+          <div class="download-container">
+            <i class="download-container__icon icon-arrow-down2"></i>
+            <span class="download-container__download-speed">{{ row.downloadSpeed }} Mbit/s</span>
+          </div>
+          <div class="upload-container__label">Upload</div>
+          <div class="upload-container">
+            <i class="upload-container__icon icon-arrow-up2"></i>
+            <span class="upload-container__upload-speed">{{ row.uploadSpeed }} Mbit/s</span>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="uploadSpeed">
+      <th data-test-selector="uploadSpeed"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+          i18n="TariffList@@upload-speed">Upload Speed
+      </th>
+      <td mat-cell *matCellDef="let row"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="tariffBenefit">
+      <th data-test-selector="tarifBenefit"
+          mat-header-cell
+          *matHeaderCellDef
+          i18n="TariffList@@tariffBenefit">Benefits
+      </th>
+      <td mat-cell
+          *matCellDef="let row">
+        <ul>
+          <li *ngFor="let tariffBenefit of row.tariffBenefit">
+            {{ tariffBenefit }}
+          </li>
+        </ul>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th data-test-selector="price"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+          i18n="TariffList@@price">
+        Price
+      </th>
+      <td mat-cell
+          *matCellDef="let row">
+        <div class="price-container">
+          <div class="price-container__price">{{ row.price | currency:'EUR': 'symbol' }}</div>
+          <button mat-button
+                  [routerLink]="'/' + row.id"
+                  class="price-container__details-button"
+                  i18n="TariffButton@to-tariff-details">
+            <span class="price-container__details-button__text">To Tariff</span><i class="icon-angle-right"></i>
+          </button>
+        </div>
+
+      </td>
+
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
