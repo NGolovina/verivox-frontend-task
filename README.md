@@ -1,3 +1,6 @@
+# verivox-frontend-task
+This is a code task of Verivox
+
 # VerivoxFrontendTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
