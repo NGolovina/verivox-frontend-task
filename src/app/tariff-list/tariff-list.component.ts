@@ -24,7 +24,6 @@ export class TariffListComponent implements OnInit {
     try {
       this.tariffOptions = await this.tariffService.tariffOptions();
       this.dataSource.data = await this.tariffService.tariffOptions();
-      console.log(this.dataSource.data);
     } catch (e) {}
   }
 
