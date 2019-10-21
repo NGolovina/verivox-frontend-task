@@ -1,4 +1,4 @@
-# VerivoxFrontendTask
+# Verivox Frontend Task
 
 To run a project first run in the console `npm init`, then start development server with `ng serve`. The app is available at `http://localhost:4200/`.
 
